@@ -9,16 +9,13 @@ pipeline {
                  }
                   stage('Build') {
                             steps {  
-                              powershell 'npm install -g @angular/cli'
                                powershell 'npm install'
-                              
-                               powershell 'ng run build'
-                               
+                               powershell 'npm run ng -- build'
                             }
                   }
                   stage('Deployment'){
 			             steps{
-				              powershell "ng serve --port 4201"
+				              powershell "npm run ng serve --port 4201"
 			             }
 		           }
          }
