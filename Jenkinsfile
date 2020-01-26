@@ -9,14 +9,14 @@ pipeline {
                  }
                   stage('Build') {
                             steps {  
-                               sh 'npm install'
-                               sh 'npm run build:ssr'
+                               powershell 'npm install'
+                               powershell 'npm run build:ssr'
                                
                             }
                   }
                   stage('Deployment'){
 			             steps{
-				              sh "pm2 restart all"
+				              powershell "pm2 restart all"
 			             }
 		           }
          }
