@@ -15,7 +15,8 @@ pipeline {
                   }
                   stage('Deployment'){
 			             steps{
-				              powershell "npm run ng serve"
+                     powershell 'forever start node_modules/@angular/cli/bin/ng serve'
+				             // powershell "npm run ng serve"
 			             }
 		           }
          }
