@@ -9,8 +9,8 @@ pipeline {
                  }
                   stage('Build') {
                             steps {  
-                               powershell 'C:\Program Files\nodejs\npm install'
-                               powershell 'C:\Program Files\nodejs\npm run build:ssr'
+                               powershell 'npm install'
+                               powershell 'npm run build:ssr'
                                
                             }
                   }
