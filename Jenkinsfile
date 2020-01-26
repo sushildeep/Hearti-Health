@@ -9,7 +9,9 @@ pipeline {
                  }
                   stage('Build') {
                             steps {  
+                              powershell 'npm install -g @angular/cli'
                                powershell 'npm install'
+                              
                                powershell 'ng run build'
                                
                             }
