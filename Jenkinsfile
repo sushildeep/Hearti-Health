@@ -10,12 +10,13 @@ pipeline {
                   stage('Build') {
                             steps {  
                                powershell 'npm install'
+                              powershell './node_modules/forever/bin/forever stopall'
                                powershell 'npm run ng -- build'
                             }
                   }
                   stage('Deployment'){
 			             steps{
-                     powershell 'forever start node_modules/@angular/cli/bin/ng serve'
+                     powershell 'JENKINS_NODE_COOKIE=dontKillMe ./node_modules/forever/bin/forever start dist/index.html'
 				             // powershell "npm run ng serve"
 			             }
 		           }
