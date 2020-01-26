@@ -10,13 +10,13 @@ pipeline {
                   stage('Build') {
                             steps {  
                                powershell 'npm install'
-                               powershell 'npm run build:ssr'
+                               powershell 'ng run build'
                                
                             }
                   }
                   stage('Deployment'){
 			             steps{
-				              powershell "pm2 restart all"
+				              powershell "ng serve --port 4201"
 			             }
 		           }
          }
