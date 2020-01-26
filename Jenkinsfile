@@ -15,7 +15,7 @@ pipeline {
                   }
                   stage('Deployment'){
 			             steps{
-				              powershell "npm run ng serve --port 4201"
+				              powershell "npm run ng serve"
 			             }
 		           }
          }
