@@ -27,6 +27,9 @@ pipeline {
                        fileOperations([fileCopyOperation(excludes: '', flattenFiles: false, includes: "dist\\**", targetLocation: "E:\\Application\\Test\\Backup-${env.BUILD_NUMBER}")])
                        }
                        fileOperations([fileCopyOperation(excludes: '', flattenFiles: false, includes: "dist\\**", targetLocation: "E:\\Application\\Test\\Live")])
+                       dir('E:\\Application\\Test'){
+                       fileOperations([fileCopyOperation(excludes: '', flattenFiles: false, includes: "Config\\**", targetLocation: "E:\\Application\\Test\\Live")])
+                       }
                      }
 			             }
 		           }
