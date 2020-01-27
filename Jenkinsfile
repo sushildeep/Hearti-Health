@@ -10,8 +10,8 @@ pipeline {
                   stage('Build') {
                             steps { 
                               script{
-                                //bat label: '', script: 'npm install'
-                                //bat label: '', script: 'npm run ng -- build'
+                                bat label: '', script: 'npm install'
+                                bat label: '', script: 'npm run ng -- build'
                               }
                             }
                   }
@@ -24,7 +24,7 @@ pipeline {
 			             }
 		           }
            }
-   post {
+     post {
         success {
             mail to: 'saritha.modiam@pratian.com', from: 'saritha.modiam@pratian.com',cc: 'lavanya.jami@pratian.com',
                 subject: "Build: ${env.JOB_NAME} -Success", 
