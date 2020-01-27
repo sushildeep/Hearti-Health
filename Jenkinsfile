@@ -7,19 +7,26 @@ pipeline {
                        checkout([$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[url:'https://github.com/saritha1919/Hearti-Health.git']]])
 			              }        
                  }
-                  stage('Build') {
+                  /*stage('Build') {
                             steps { 
                               script{
                                 bat label: '', script: 'npm install'
                                 bat label: '', script: 'npm run ng -- build'
                               }
                             }
-                  }
+                  }*/
                   stage('Deployment'){
 			             steps{
                      script{
                        //bat label: '', script: 'npm run ng serve'
-                       fileOperations([fileCopyOperation(excludes: '', flattenFiles: false, includes: "dist\\**", targetLocation: "E:\\Application\\Test")])
+                       dir('E:\\Application\\Test\\Backup')
+                       {
+                         deleteDir();
+                       }
+                       dir('E:\Application\Test\Live'){
+                       fileOperations([fileCopyOperation(excludes: '', flattenFiles: false, includes: "dist\\**", targetLocation: "E:\\Application\\Test\\Backup")])
+                       }
+                       fileOperations([fileCopyOperation(excludes: '', flattenFiles: false, includes: "dist\\**", targetLocation: "E:\\Application\\Test\\Live")])
                      }
 			             }
 		           }
