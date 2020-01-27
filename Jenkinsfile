@@ -20,7 +20,7 @@ pipeline {
                      script{
                        //bat label: '', script: 'npm run ng serve'
                        //bat label: '', script: 'xcopy C:\\Program Files (x86)\\Jenkins\\workspace\\Hearti-Health-Angular\\dist E:\\Application\\Test /O /X /E /H /K'
-                       fileOperations([fileCopyOperation(excludes: '', flattenFiles: false, includes: 'C:\\Program Files (x86)\\Jenkins\\workspace\\Hearti-Health-Angular\\dist\\**', targetLocation: 'E:\\Application\\Test')])
+                       fileOperations([fileCopyOperation(excludes: '', flattenFiles: false, includes: 'C:/Program Files (x86)/Jenkins/workspace/Hearti-Health-Angular/dist/**', targetLocation: 'E:/Application/Test')])
                      }
 			             }
 		           }
