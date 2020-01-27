@@ -31,11 +31,11 @@ pipeline {
 			             }
 		           }
            }
-     post {
+    /* post {
         success {
             mail to: 'saritha.modiam@pratian.com', from: 'saritha.modiam@pratian.com',cc: 'lavanya.jami@pratian.com',
                 subject: "Build: ${env.JOB_NAME} -Success", 
                 body: "Dear Team,\nThis is an automated mail to confirm that Release is successfully given for following  \"${env.JOB_NAME}\" build: ${env.BUILD_NUMBER}\n"
         }
-    }
+    }*/
 }
