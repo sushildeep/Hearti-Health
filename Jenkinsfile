@@ -19,7 +19,8 @@ pipeline {
 			             steps{
                      script{
                        //bat label: '', script: 'npm run ng serve'
-                       bat label: '', script: 'COPY /dist /A E:\\Application\\Test /A'
+                       bat label: '', script: 'xcopy C:\Program Files (x86)\Jenkins\workspace\Hearti-Health-Angular\dist E:\\Application\\Test /O /X /E /H /K'
+                       //bat label: '', script: 'COPY /dist /A E:\\Application\\Test /A'
                      }
 			             }
 		           }
