@@ -23,7 +23,7 @@ pipeline {
                        {
                          deleteDir();
                        }
-                       dir('E:\Application\Test\Live'){
+                       dir('E:\\Application\\Test\\Live'){
                        fileOperations([fileCopyOperation(excludes: '', flattenFiles: false, includes: "dist\\**", targetLocation: "E:\\Application\\Test\\Backup")])
                        }
                        fileOperations([fileCopyOperation(excludes: '', flattenFiles: false, includes: "dist\\**", targetLocation: "E:\\Application\\Test\\Live")])
