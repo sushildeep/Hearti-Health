@@ -37,7 +37,7 @@ pipeline {
                    script{
                      dir('C:\\Program Files (x86)\\Jenkins\\workspace\\Hearti-Health-Angular'){
                        //powershell -File iisrestart.ps1
-                      powershell label: '', script: '.\iisrestart.ps1'
+                      powershell label: '', script: '.\\iisrestart.ps1'
                      }
                    }
                  }
