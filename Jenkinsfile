@@ -33,9 +33,9 @@ pipeline {
                {
                  steps{
                    script{
-                    bat label: '', script: '''Import-Module WebAdministration
-                                                      Stop-WebSite \'Test-Angular\'
-                                                          Start-WebSite \'Test-Angular\''''
+                   Power shell : 'Import-Module WebAdministration
+                                         Stop-WebSite 'Test-Angular'
+                                         Start-WebSite 'Test-Angular'"
                    }
                  }
                }
