@@ -33,7 +33,9 @@ pipeline {
                {
                  steps{
                    script{
-                     Powershell 'Import-Module WebAdministration  Stop-WebSite 'Default Web Site'   Start-WebSite 'Default Web Site''
+                     Powershell 'Import-Module WebAdministration'  
+                     Powershell  'Stop-WebSite 'Test-Angular''
+                     Powershell   'Start-WebSite 'Test-Angular''
 
                    }
                  }
