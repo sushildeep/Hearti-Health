@@ -33,9 +33,7 @@ pipeline {
                {
                  steps{
                    script{
-                   Power shell : 'Import-Module WebAdministration
-                                         Stop-WebSite 'Test-Angular'
-                                         Start-WebSite 'Test-Angular'"
+                   powershell label: '', script: './iisrestart.ps1'
                    }
                  }
                }
