@@ -33,9 +33,9 @@ pipeline {
                {
                  steps{
                    script{
-                     Power shell : “Import-Module WebAdministration
+                     Power shell : "Import-Module WebAdministration
                                          Stop-WebSite 'Default Web Site'
-                                         Start-WebSite 'Default Web Site'”
+                                         Start-WebSite 'Default Web Site'"
 
                    }
                  }
