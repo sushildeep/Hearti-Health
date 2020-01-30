@@ -19,10 +19,6 @@ pipeline {
 			             steps{
                      script{
                        //bat label: '', script: 'npm run ng serve'
-                       /*dir('E:\\Application\\Test\\Backup-${env.BUILD_NUMBER}')
-                       {
-                         deleteDir();
-                       }*/
                        dir('E:\\Application\\Test\\Live'){
                        fileOperations([fileCopyOperation(excludes: '', flattenFiles: false, includes: "dist\\**", targetLocation: "E:\\Application\\Test\\Backup-${env.BUILD_NUMBER}")])
                        }
@@ -33,6 +29,17 @@ pipeline {
                      }
 			             }
 		           }
+               stage('RestartApp')
+               {
+                 steps{
+                   script{
+                     Power shell : “Import-Module WebAdministration
+                                         Stop-WebSite 'Default Web Site'
+                                         Start-WebSite 'Default Web Site'”
+
+                   }
+                 }
+               }
            }
     /* post {
         success {
