@@ -15,6 +15,11 @@ pipeline {
                               }
                             }
                   }*/
+               stage('Archiving Artifacts') { 
+                         steps{ 
+                             archiveArtifacts 'dist/**' 
+                         } 
+                 } 
                   stage('Deployment'){
 			             steps{
                      script{
@@ -33,7 +38,9 @@ pipeline {
                {
                  steps{
                    script{
+                     dir('C:\Program Files (x86)\Jenkins\workspace\Hearti-Health-Angular'){
                    powershell label: '', script: './iisrestart.ps1'
+                     }
                    }
                  }
                }
