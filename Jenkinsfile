@@ -24,9 +24,6 @@ pipeline {
 			             steps{
                      script{
                        //bat label: '', script: 'npm run ng serve'
-                       dir('E:\\Application\\Test\\Live'){
-                       fileOperations([fileCopyOperation(excludes: '', flattenFiles: false, includes: "dist\\**", targetLocation: "E:\\Application\\Test\\Backup-${env.BUILD_NUMBER}")])
-                       }
                        fileOperations([fileCopyOperation(excludes: '', flattenFiles: false, includes: "dist\\**", targetLocation: "E:\\Application\\Test\\Live")])
                        dir('E:\\Application\\Test\\Config'){
                        fileOperations([fileCopyOperation(excludes: '', flattenFiles: false, includes: "\\**", targetLocation: "E:\\Application\\Test\\Live\\dist")])
@@ -39,7 +36,7 @@ pipeline {
                  steps{
                    script{
                      dir('C:\\Program Files (x86)\\Jenkins\\workspace\\Hearti-Health-Angular'){
-                   powershell label: '', script: './iisrestart.ps1'
+                   powershell label: '', script: 'iisrestart.ps1'
                      }
                    }
                  }
